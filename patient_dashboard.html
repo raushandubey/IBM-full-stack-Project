@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHealth Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-heartbeat"></i> MyHealth Dashboard</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#appointments"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+                    <li><a href="#medical-history"><i class="fas fa-notes-medical"></i> Medical History</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <h2>Quick Access</h2>
+            <ul class="sidebar-links">
+                <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#appointments"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                <li><a href="#medical-history"><i class="fas fa-file-medical"></i> Medical History</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Section -->
+        <main class="main-content">
+            <!-- Patient Profiles Section -->
+            <section id="patients" class="section animate-section">
+                <h2><i class="fas fa-users"></i> Patient Profiles</h2>
+                
+                <!-- Raushan Patient Information -->
+                <div id="profile" class="patient-card">
+                    <h3><i class="fas fa-id-card"></i> Raushan Dubey</h3>
+                    <div class="patient-details">
+                        <p><strong>Date of Birth:</strong> January 09, 2005</p>
+                        <p><strong>Age:</strong> 20</p>
+                        <p><strong>Gender:</strong> Male</p>
+                        <p><strong>Blood Type:</strong> O+</p>
+                        <p><strong>Contact:</strong> 9934898643</p>
+                        <p><strong>Email:</strong> raushandubey2005@email.com</p>
+                        <p><strong>Address:</strong> Dehri, BIhar, In 821312</p>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h4>
+                        <p><strong>Name:</strong> Deepak Dubey</p>
+                        <p><strong>Relationship:</strong> Brother</p>
+                        <p><strong>Contact:</strong> 9934898643</p>
+                    </div>
+                </div>
+
+                <!-- Sudhanshu Patient Information -->
+                <div id="profile-sudhanshu" class="patient-card">
+                    <h3><i class="fas fa-id-card"></i> Sudhanshu</h3>
+                    <div class="patient-details">
+                        <p><strong>Date of Birth:</strong> March 15, 2000</p>
+                        <p><strong>Age:</strong> 25</p>
+                        <p><strong>Gender:</strong> Male</p>
+                        <p><strong>Blood Type:</strong> A+</p>
+                        <p><strong>Contact:</strong> 9876543210</p>
+                        <p><strong>Email:</strong> sudhanshu@gmail.com</p>
+                        <p><strong>Address:</strong> Dehri, BIhar, In 821312</p>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h4>
+                        <p><strong>Name:</strong> Rupali</p>
+                        <p><strong>Relationship:</strong> GF</p>
+                        <p><strong>Contact:</strong> 9876543210</p>
+                    </div>
+                </div>
+
+                <!-- Rupali Patient Information -->
+                <div id="profile-rupali" class="patient-card">
+                    <h3><i class="fas fa-id-card"></i> Rupali</h3>
+                    <div class="patient-details">
+                        <p><strong>Date of Birth:</strong> July 06, 2004</p>
+                        <p><strong>Age:</strong> 21</p>
+                        <p><strong>Gender:</strong> Female</p>
+                        <p><strong>Blood Type:</strong> B+</p>
+                        <p><strong>Contact:</strong> 9876543211</p>
+                        <p><strong>Email:</strong> rupali@gmail.com</p>
+                        <p><strong>Address:</strong> Dehri, BIhar, In 821312</p>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h4>
+                        <p><strong>Name:</strong> Sudhanshu</p>
+                        <p><strong>Relationship:</strong> Husband</p>
+                        <p><strong>Contact:</strong> 9876543211</p>
+                    </div>
+                </div>
+
+                <!-- Abhishek Patient Information -->
+                <div id="profile-abhishek" class="patient-card">
+                    <h3><i class="fas fa-id-card"></i> Abhishek</h3>
+                    <div class="patient-details">
+                        <p><strong>Date of Birth:</strong> December 05, 2003</p>
+                        <p><strong>Age:</strong> 21</p>
+                        <p><strong>Gender:</strong> Male</p>
+                        <p><strong>Blood Type:</strong> AB-</p>
+                        <p><strong>Contact:</strong> 9876543212</p>
+                        <p><strong>Email:</strong> abhishek@gmail.com</p>
+                        <p><strong>Address:</strong> Dehri, BIhar, In 821312</p>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h4>
+                        <p><strong>Name:</strong>Raushan Dubey</p>
+                        <p><strong>Relationship:</strong> Friend</p>
+                        <p><strong>Contact:</strong> 9934898643</p>
+                    </div>
+                </div>
+
+                <!-- Ricky Patient Information -->
+                <div id="profile-ricky" class="patient-card">
+                    <h3><i class="fas fa-id-card"></i> Ricky</h3>
+                    <div class="patient-details">
+                        <p><strong>Date of Birth:</strong> August 17, 2001</p>
+                        <p><strong>Age:</strong> 24</p>
+                        <p><strong>Gender:</strong> Male</p>
+                        <p><strong>Blood Type:</strong> O-</p>
+                        <p><strong>Contact:</strong> 9876543213</p>
+                        <p><strong>Email:</strong> ricky@gmail.com</p>
+                        <p><strong>Address:</strong> Dehri, BIhar, In 821312</p>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h4>
+                        <p><strong>Name:</strong> Sudhanshu</p>
+                        <p><strong>Relationship:</strong> Friend</p>
+                        <p><strong>Contact:</strong> 9876543213</p>
+                    </div>
+                </div>
+
+                <!-- Mangal Patient Information -->
+                <div id="profile-mangal" class="patient-card">
+                    <h3><i class="fas fa-id-card"></i> Mangal</h3>
+                    <div class="patient-details">
+                        <p><strong>Date of Birth:</strong> February 28, 2003</p>
+                        <p><strong>Age:</strong> 22</p>
+                        <p><strong>Gender:</strong> Male</p>
+                        <p><strong>Blood Type:</strong> A-</p>
+                        <p><strong>Contact:</strong> 9876543214</p>
+                        <p><strong>Email:</strong> mangal@gmail.com</p>
+                        <p><strong>Address:</strong> Sasaram, BIhar, In 821301</p>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h4>
+                        <p><strong>Name:</strong> Raushan Dubey</p>
+                        <p><strong>Relationship:</strong> Father</p>
+                        <p><strong>Contact:</strong> 9934898643</p>
+                    </div>
+                </div>
+
+                <!-- Aniket Patient Information -->
+                <div id="profile-aniket" class="patient-card">
+                    <h3><i class="fas fa-id-card"></i> Aniket</h3>
+                    <div class="patient-details">
+                        <p><strong>Date of Birth:</strong> October 12, 1998</p>
+                        <p><strong>Age:</strong> 26</p>
+                        <p><strong>Gender:</strong> Male</p>
+                        <p><strong>Blood Type:</strong> B-</p>
+                        <p><strong>Contact:</strong> 9876543215</p>
+                        <p><strong>Email:</strong> aniket@example.com</p>
+                        <p><strong>Address:</strong> 987 Medical Circle, Healthcare City</p>
+                    </div>
+
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h4>
+                        <p><strong>Name:</strong> Raushan Dubey</p>
+                        <p><strong>Relationship:</strong> Mama </p>
+                        <p><strong>Contact:</strong> 9934898643</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Medical History Section -->
+            <section id="medical-history" class="section animate-section">
+                <h2><i class="fas fa-file-medical-alt"></i> Medical History Records</h2>
+                
+                <!-- Raushan Medical History -->
+                <div id="history-raushan" class="medical-history-card">
+                    <h3><i class="fas fa-user-md"></i> Raushan Dubey - Medical History</h3>
+                    
+                    <div class="history-item allergies">
+                        <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                        <ul>
+                            <li>Paint</li>
+                            <li>Peanuts</li>
+                            <li>Dust mites</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item conditions">
+                        <h4><i class="fas fa-heartbeat"></i> Chronic Conditions</h4>
+                        <ul>
+                            <li>Hypertension (diagnosed 2022)</li>
+                            <li>Type 2 Diabetes (diagnosed 2023)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item medications">
+                        <h4><i class="fas fa-pills"></i> Current Medications</h4>
+                        <ul>
+                            <li>Lisinopril 10mg - Once daily</li>
+                            <li>Metformin 500mg - Twice daily</li>
+                            <li>Atorvastatin 20mg - Once daily</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item surgeries">
+                        <h4><i class="fas fa-procedures"></i> Past Surgeries & Procedures</h4>
+                        <ul>
+                            <li>Appendectomy (2020)</li>
+                            <li>Coronary angiogram (2022)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item recent-visits">
+                        <h4><i class="fas fa-hospital"></i> Recent Hospital Visits</h4>
+                        <ul>
+                            <li>
+                                <p><strong>March 10, 2023</strong> - Emergency Room</p>
+                                <p>Reason: Chest pain (Diagnosed as Acid Reflux)</p>
+                            </li>
+                            <li>
+                                <p><strong>January 5, 2024</strong> - Outpatient</p>
+                                <p>Reason: Diabetic check-up (A1C levels: 6.8%)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item immunizations">
+                        <h4><i class="fas fa-syringe"></i> Immunizations</h4>
+                        <ul>
+                            <li>Influenza Vaccine (October 2023)</li>
+                            <li>COVID-19 Vaccine (March 2021, completed series)</li>
+                            <li>Tetanus Booster (2019)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Sudhanshu Medical History -->
+                <div id="history-sudhanshu" class="medical-history-card">
+                    <h3><i class="fas fa-user-md"></i> Sudhanshu - Medical History</h3>
+                    
+                    <div class="history-item allergies">
+                        <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                        <ul>
+                            <li>Penicillin</li>
+                            <li>Peanuts</li>
+                            <li>Shellfish</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item conditions">
+                        <h4><i class="fas fa-heartbeat"></i> Chronic Conditions</h4>
+                        <ul>
+                            <li>Asthma (diagnosed 2018)</li>
+                            <li>Migraine (diagnosed 2020)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item medications">
+                        <h4><i class="fas fa-pills"></i> Current Medications</h4>
+                        <ul>
+                            <li>Albuterol inhaler - As needed</li>
+                            <li>Sumatriptan 50mg - As needed for migraine</li>
+                            <li>Cetirizine 10mg - Once daily</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item surgeries">
+                        <h4><i class="fas fa-procedures"></i> Past Surgeries & Procedures</h4>
+                        <ul>
+                            <li>Tonsillectomy (2010)</li>
+                            <li>Knee arthroscopy (2019)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item recent-visits">
+                        <h4><i class="fas fa-hospital"></i> Recent Hospital Visits</h4>
+                        <ul>
+                            <li>
+                                <p><strong>February 15, 2024</strong> - Emergency Room</p>
+                                <p>Reason: Severe migraine with vision changes</p>
+                            </li>
+                            <li>
+                                <p><strong>November 12, 2023</strong> - Outpatient</p>
+                                <p>Reason: Annual asthma review (Peak flow: 520 L/min)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item immunizations">
+                        <h4><i class="fas fa-syringe"></i> Immunizations</h4>
+                        <ul>
+                            <li>Influenza Vaccine (September 2023)</li>
+                            <li>COVID-19 Vaccine (April 2021, completed series)</li>
+                            <li>Pneumococcal Vaccine (2022)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Rupali Medical History -->
+                <div id="history-rupali" class="medical-history-card">
+                    <h3><i class="fas fa-user-md"></i> Rupali - Medical History</h3>
+                    
+                    <div class="history-item allergies">
+                        <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                        <ul>
+                            <li>Sulfa drugs</li>
+                            <li>Tree nuts</li>
+                            <li>Latex</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item conditions">
+                        <h4><i class="fas fa-heartbeat"></i> Chronic Conditions</h4>
+                        <ul>
+                            <li>Hypothyroidism (diagnosed 2019)</li>
+                            <li>Osteoarthritis (diagnosed 2021)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item medications">
+                        <h4><i class="fas fa-pills"></i> Current Medications</h4>
+                        <ul>
+                            <li>Levothyroxine 75mcg - Once daily</li>
+                            <li>Acetaminophen 500mg - As needed for pain</li>
+                            <li>Calcium + Vitamin D supplement - Once daily</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item surgeries">
+                        <h4><i class="fas fa-procedures"></i> Past Surgeries & Procedures</h4>
+                        <ul>
+                            <li>Cesarean section (2015)</li>
+                            <li>Cholecystectomy (2018)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item recent-visits">
+                        <h4><i class="fas fa-hospital"></i> Recent Hospital Visits</h4>
+                        <ul>
+                            <li>
+                                <p><strong>April 5, 2024</strong> - Outpatient</p>
+                                <p>Reason: Thyroid function test (TSH: 2.4 mIU/L)</p>
+                            </li>
+                            <li>
+                                <p><strong>December 18, 2023</strong> - Orthopedics</p>
+                                <p>Reason: Knee pain assessment (Prescribed physical therapy)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item immunizations">
+                        <h4><i class="fas fa-syringe"></i> Immunizations</h4>
+                        <ul>
+                            <li>Influenza Vaccine (November 2023)</li>
+                            <li>COVID-19 Vaccine (February 2021, completed series)</li>
+                            <li>Tdap Booster (2021)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Abhishek Medical History -->
+                <div id="history-abhishek" class="medical-history-card">
+                    <h3><i class="fas fa-user-md"></i> Abhishek - Medical History</h3>
+                    
+                    <div class="history-item allergies">
+                        <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                        <ul>
+                            <li>Ibuprofen</li>
+                            <li>Dairy</li>
+                            <li>Mold</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item conditions">
+                        <h4><i class="fas fa-heartbeat"></i> Chronic Conditions</h4>
+                        <ul>
+                            <li>GERD (diagnosed 2017)</li>
+                            <li>Seasonal allergies (diagnosed 2015)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item medications">
+                        <h4><i class="fas fa-pills"></i> Current Medications</h4>
+                        <ul>
+                            <li>Omeprazole 20mg - Once daily</li>
+                            <li>Loratadine 10mg - Once daily</li>
+                            <li>Fluticasone nasal spray - Twice daily during pollen season</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item surgeries">
+                        <h4><i class="fas fa-procedures"></i> Past Surgeries & Procedures</h4>
+                        <ul>
+                            <li>Hernia repair (2014)</li>
+                            <li>Endoscopy (2020)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item recent-visits">
+                        <h4><i class="fas fa-hospital"></i> Recent Hospital Visits</h4>
+                        <ul>
+                            <li>
+                                <p><strong>March 28, 2024</strong> - Gastroenterology</p>
+                                <p>Reason: Follow-up endoscopy (Results: Mild esophagitis)</p>
+                            </li>
+                            <li>
+                                <p><strong>February 2, 2024</strong> - Allergy Clinic</p>
+                                <p>Reason: Allergy testing (Positive for multiple pollen types)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item immunizations">
+                        <h4><i class="fas fa-syringe"></i> Immunizations</h4>
+                        <ul>
+                            <li>Influenza Vaccine (October 2023)</li>
+                            <li>COVID-19 Vaccine (May 2021, completed series)</li>
+                            <li>Hepatitis A & B (2020)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Ricky Medical History -->
+                <div id="history-ricky" class="medical-history-card">
+                    <h3><i class="fas fa-user-md"></i> Ricky - Medical History</h3>
+                    
+                    <div class="history-item allergies">
+                        <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                        <ul>
+                            <li>Aspirin</li>
+                            <li>Wheat</li>
+                            <li>Pollen</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item conditions">
+                        <h4><i class="fas fa-heartbeat"></i> Chronic Conditions</h4>
+                        <ul>
+                            <li>Anxiety disorder (diagnosed 2019)</li>
+                            <li>Irritable Bowel Syndrome (diagnosed 2021)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item medications">
+                        <h4><i class="fas fa-pills"></i> Current Medications</h4>
+                        <ul>
+                            <li>Escitalopram 10mg - Once daily</li>
+                            <li>Dicyclomine 10mg - As needed for IBS symptoms</li>
+                            <li>Probiotic supplement - Once daily</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item surgeries">
+                        <h4><i class="fas fa-procedures"></i> Past Surgeries & Procedures</h4>
+                        <ul>
+                            <li>Shoulder arthroscopy (2017)</li>
+                            <li>Colonoscopy (2022)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item recent-visits">
+                        <h4><i class="fas fa-hospital"></i> Recent Hospital Visits</h4>
+                        <ul>
+                            <li>
+                                <p><strong>April 12, 2024</strong> - Mental Health</p>
+                                <p>Reason: Anxiety management follow-up (Stable on current medication)</p>
+                            </li>
+                            <li>
+                                <p><strong>January 30, 2024</strong> - Gastroenterology</p>
+                                <p>Reason: IBS symptom review (Recommended dietary modifications)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item immunizations">
+                        <h4><i class="fas fa-syringe"></i> Immunizations</h4>
+                        <ul>
+                            <li>Influenza Vaccine (December 2023)</li>
+                            <li>COVID-19 Vaccine (June 2021, completed series)</li>
+                            <li>Tdap Booster (2020)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Mangal Medical History -->
+                <div id="history-mangal" class="medical-history-card">
+                    <h3><i class="fas fa-user-md"></i> Mangal - Medical History</h3>
+                    
+                    <div class="history-item allergies">
+                        <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                        <ul>
+                            <li>Quinolone antibiotics</li>
+                            <li>Eggs</li>
+                            <li>Wool</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item conditions">
+                        <h4><i class="fas fa-heartbeat"></i> Chronic Conditions</h4>
+                        <ul>
+                            <li>Lower back pain (diagnosed 2020)</li>
+                            <li>Mild sleep apnea (diagnosed 2022)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item medications">
+                        <h4><i class="fas fa-pills"></i> Current Medications</h4>
+                        <ul>
+                            <li>Cyclobenzaprine 5mg - As needed for back spasms</li>
+                            <li>Naproxen 220mg - As needed for pain</li>
+                            <li>Melatonin 3mg - As needed for sleep</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item surgeries">
+                        <h4><i class="fas fa-procedures"></i> Past Surgeries & Procedures</h4>
+                        <ul>
+                            <li>Microdiscectomy L4-L5 (2020)</li>
+                            <li>Septoplasty (2022)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item recent-visits">
+                        <h4><i class="fas fa-hospital"></i> Recent Hospital Visits</h4>
+                        <ul>
+                            <li>
+                                <p><strong>March 20, 2024</strong> - Sleep Medicine</p>
+                                <p>Reason: Sleep study follow-up (Recommended CPAP adjustment)</p>
+                            </li>
+                            <li>
+                                <p><strong>December 5, 2023</strong> - Orthopedics</p>
+                                <p>Reason: Back pain management (Prescribed physical therapy)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item immunizations">
+                        <h4><i class="fas fa-syringe"></i> Immunizations</h4>
+                        <ul>
+                            <li>Influenza Vaccine (November 2023)</li>
+                            <li>COVID-19 Vaccine (April 2021, completed series)</li>
+                            <li>Pneumococcal Vaccine (2023)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Aniket Medical History -->
+                <div id="history-aniket" class="medical-history-card">
+                    <h3><i class="fas fa-user-md"></i> Aniket - Medical History</h3>
+                    
+                    <div class="history-item allergies">
+                        <h4><i class="fas fa-allergies"></i> Allergies</h4>
+                        <ul>
+                            <li>Contrast dye</li>
+                            <li>Seafood</li>
+                            <li>Strong perfumes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item conditions">
+                        <h4><i class="fas fa-heartbeat"></i> Chronic Conditions</h4>
+                        <ul>
+                            <li>Exercise-induced asthma (diagnosed 2018)</li>
+                            <li>Mitral valve prolapse (diagnosed 2021)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item medications">
+                        <h4><i class="fas fa-pills"></i> Current Medications</h4>
+                        <ul>
+                            <li>Albuterol inhaler - Before exercise</li>
+                            <li>Low-dose aspirin 81mg - Once daily</li>
+                            <li>Magnesium supplement - Once daily</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item surgeries">
+                        <h4><i class="fas fa-procedures"></i> Past Surgeries & Procedures</h4>
+                        <ul>
+                            <li>Ankle ORIF (2016)</li>
+                            <li>Cardiac catheterization (2021)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item recent-visits">
+                        <h4><i class="fas fa-hospital"></i> Recent Hospital Visits</h4>
+                        <ul>
+                            <li>
+                                <p><strong>April 2, 2024</strong> - Cardiology</p>
+                                <p>Reason: Annual echo (Results: Stable MVP, no changes)</p>
+                            </li>
+                            <li>
+                                <p><strong>February 10, 2024</strong> - Pulmonology</p>
+                                <p>Reason: Pulmonary function test (Results: Mild restrictive pattern)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="history-item immunizations">
+                        <h4><i class="fas fa-syringe"></i> Immunizations</h4>
+                        <ul>
+                            <li>Influenza Vaccine (October 2023)</li>
+                            <li>COVID-19 Vaccine (March 2021, completed series)</li>
+                            <li>Pneumococcal Vaccine (2021)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments Section -->
+            <section id="appointments" class="section animate-section">
+                <h2><i class="fas fa-calendar-check"></i> Upcoming Appointments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Doctor</th>
+                            <th>Department</th>
+                            <th>Appointment Type</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="appointment-alert">
+                            <td>May 15, 2025</td>
+                            <td>10:00 AM</td>
+                            <td>Dr. Raushan Dubey</td>
+                            <td>Cardiology</td>
+                            <td>Follow-up</td>
+                            <td>Building A, Room 302</td>
+                        </tr>
+                        <tr>
+                            <td>June 2, 2025</td>
+                            <td>2:30 PM</td>
+                            <td>Dr. Mangal Singh</td>
+                            <td>Orthopedics</td>
+                            <td>Consultation</td>
+                            <td>Building B, Room 105</td>
+                        </tr>
+                        <tr>
+                            <td>June 15, 2025</td>
+                            <td>11:15 AM</td>
+                            <td>Dr. Raj Singh</td>
+                            <td>General Medicine</td>
+                            <td>Annual Check-up</td>
+                            <td>Building A, Room 210</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Appointment Booking Form Section -->
+            <section class="section animate-section">
+                <form class="appointment-form" id="appointmentForm" novalidate>
+                    <h2><i class="fas fa-calendar-plus"></i> Book an Appointment</h2>
+                    
+                    <!-- Patient Information -->
+                    <fieldset>
+                        <legend>Patient Information</legend>
+                        
+                        <div class="form-group">
+                            <label for="name" class="required">Full Name</label>
+                            <input type="text" id="name" name="name" required 
+                                   pattern="[A-Za-z\s]{2,50}" 
+                                   title="Please enter a valid name (2-50 characters, letters and spaces only)"
+                                   aria-required="true"
+                                   placeholder="Enter your full name">
+                            <div class="error-message">Please enter a valid name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="required">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                   title="Please enter a valid email address"
+                                   aria-required="true"
+                                   placeholder="Enter your email address">
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="required">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required
+                                   pattern="[0-9]{10}"
+                                   title="Please enter a valid 10-digit phone number"
+                                   aria-required="true"
+                                   placeholder="Enter your phone number">
+                            <div class="error-message">Please enter a valid 10-digit phone number</div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Appointment Details -->
+                    <fieldset>
+                        <legend>Appointment Details</legend>
+
+                        <div class="form-group">
+                            <label for="doctor" class="required">Select Doctor</label>
+                            <select id="doctor" name="doctor" required aria-required="true">
+                                <option value="">Choose a doctor</option>
+                                <option value="dr-Raj-Singh">Dr. Raj Singh - General Physician</option>
+                                <option value="dr-Raushan-Dubey">Dr. Raushan Dubey - Cardiologist</option>
+                                <option value="dr-Mangal-Singh">Dr. Mangal Singh - Orthopedist</option>
+                                <option value="dr-Abhishek-Singh">Dr. Abhishek Singh - Pediatrician</option>
+                                <option value="dr-Sudhanshu-Singh">Dr. Sudhanshu Singh - Neurologist</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentType" class="required">Appointment Type</label>
+                            <select id="appointmentType" name="appointmentType" required aria-required="true">
+                                <option value="">Select appointment type</option>
+                                <option value="general-checkup">General Checkup</option>
+                                <option value="follow-up">Follow-up Visit</option>
+                                <option value="specialist">Specialist Consultation</option>
+                                <option value="emergency">Emergency Visit</option>
+                                <option value="routine">Routine Examination</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date" class="required">Preferred Date</label>
+                            <input type="date" id="date" name="date" required
+                                   min="2024-03-20"
+                                   aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time" class="required">Preferred Time</label>
+                            <input type="time" id="time" name="time" required
+                                   min="09:00" max="17:00"
+                                   aria-required="true">
+                        </div>
+                    </fieldset>
+
+                    <!-- Medical Information -->
+                    <fieldset>
+                        <legend>Medical Information</legend>
+
+                        <div class="form-group">
+                            <label for="symptoms">Symptoms/Medical History</label>
+                            <textarea id="symptoms" name="symptoms" 
+                                      placeholder="Please describe your symptoms or relevant medical history"
+                                      aria-label="Symptoms and medical history"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Language</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="language" value="english" checked>
+                                    English
+                                </label>
+                                <label>
+                                    <input type="radio" name="language" value="Hindi">
+                                    Hindi
+                                </label>
+                                <label>
+                                    <input type="radio" name="language" value="Bhojpuri">
+                                    Bhojpuri
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-check"></i> Book Appointment
+                    </button>
+                </form>
+
+                <!-- Appointment Summary Table -->
+                <div class="appointment-summary" id="appointmentSummary">
+                    <h3><i class="fas fa-file-medical"></i> Appointment Summary</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Patient Name</td>
+                                <td id="summaryName"></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td id="summaryEmail"></td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td id="summaryPhone"></td>
+                            </tr>
+                            <tr>
+                                <td>Doctor</td>
+                                <td id="summaryDoctor"></td>
+                            </tr>
+                            <tr>
+                                <td>Appointment Type</td>
+                                <td id="summaryType"></td>
+                            </tr>
+                            <tr>
+                                <td>Date & Time</td>
+                                <td id="summaryDateTime"></td>
+                            </tr>
+                            <tr>
+                                <td>Symptoms/History</td>
+                                <td id="summarySymptoms"></td>
+                            </tr>
+                            <tr>
+                                <td>Preferred Language</td>
+                                <td id="summaryLanguage"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 MyHealth Dashboard (Raushan Dubey). All rights reserved.</p>
+        <p>For medical emergencies, please call emergency services immediately.</p>
+    </footer>
+
+    <script src="animations.js"></script>
+    <script>
+        // Fix for medical history section
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure all sections are visible
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'block';
+                section.style.opacity = '1';
+                section.style.visibility = 'visible';
+            });
+            
+            // Ensure medical history cards are visible
+            const medHistoryCards = document.querySelectorAll('.medical-history-card');
+            medHistoryCards.forEach(card => {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.visibility = 'visible';
+            });
+            
+            // Smooth scroll to sections when links are clicked
+            const links = document.querySelectorAll('.sidebar-links a, .nav-links a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Fix for appointment booking form submission and summary display
+            const appointmentForm = document.getElementById('appointmentForm');
+            const appointmentSummary = document.getElementById('appointmentSummary');
+            
+            appointmentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                
+                // Get doctor selection
+                const doctorSelect = document.getElementById('doctor');
+                const doctorText = doctorSelect.options[doctorSelect.selectedIndex].text;
+                
+                // Get appointment type
+                const appointmentTypeSelect = document.getElementById('appointmentType');
+                const appointmentTypeText = appointmentTypeSelect.options[appointmentTypeSelect.selectedIndex].text;
+                
+                // Get date and time
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                const formattedDate = new Date(date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                const formattedDateTime = `${formattedDate} at ${time}`;
+                
+                // Get symptoms/history
+                const symptoms = document.getElementById('symptoms').value || 'None provided';
+                
+                // Get preferred language
+                const languageInputs = document.querySelectorAll('input[name="language"]');
+                let selectedLanguage = '';
+                languageInputs.forEach(input => {
+                    if (input.checked) {
+                        selectedLanguage = input.value;
+                    }
+                });
+                
+                // Update summary table
+                document.getElementById('summaryName').textContent = name;
+                document.getElementById('summaryEmail').textContent = email;
+                document.getElementById('summaryPhone').textContent = phone;
+                document.getElementById('summaryDoctor').textContent = doctorText;
+                document.getElementById('summaryType').textContent = appointmentTypeText;
+                document.getElementById('summaryDateTime').textContent = formattedDateTime;
+                document.getElementById('summarySymptoms').textContent = symptoms;
+                document.getElementById('summaryLanguage').textContent = selectedLanguage;
+                
+                // Show appointment summary
+                appointmentSummary.style.display = 'block';
+                
+                // Scroll to summary
+                appointmentSummary.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Show confirmation message
+                const confirmationMessage = document.createElement('div');
+                confirmationMessage.className = 'appointment-alert success';
+                confirmationMessage.innerHTML = '<p><i class="fas fa-check-circle"></i> Appointment booked successfully!</p>';
+                appointmentForm.insertAdjacentElement('beforebegin', confirmationMessage);
+                
+                // Remove confirmation after 5 seconds
+                setTimeout(() => {
+                    confirmationMessage.remove();
+                }, 5000);
+            });
+            
+            // Form validation
+            const formInputs = appointmentForm.querySelectorAll('input, select, textarea');
+            formInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateInput(this);
+                });
+                
+                input.addEventListener('input', function() {
+                    validateInput(this);
+                });
+            });
+            
+            function validateInput(input) {
+                if (input.hasAttribute('required') && !input.value) {
+                    input.classList.add('error');
+                    const errorMessage = input.nextElementSibling;
+                    if (errorMessage && errorMessage.classList.contains('error-message')) {
+                        errorMessage.style.display = 'block';
+                    }
+                } else {
+                    input.classList.remove('error');
+                    const errorMessage = input.nextElementSibling;
+                    if (errorMessage && errorMessage.classList.contains('error-message')) {
+                        errorMessage.style.display = 'none';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

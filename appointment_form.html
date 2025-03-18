@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking - MyHealth Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Form specific styles */
+        .appointment-form {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .radio-group input[type="radio"] {
+            width: auto;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        legend {
+            padding: 0 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+        }
+
+        .appointment-summary {
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .appointment-summary.visible {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .error-message {
+            color: var(--tertiary-color);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .form-group input:invalid + .error-message {
+            display: block;
+        }
+
+        .required::after {
+            content: "*";
+            color: var(--tertiary-color);
+            margin-left: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="appointment-form" id="appointmentForm" novalidate>
+            <h2><i class="fas fa-calendar-plus"></i> Book an Appointment</h2>
+            
+            <!-- Patient Information -->
+            <fieldset>
+                <legend>Patient Information</legend>
+                
+                <div class="form-group">
+                    <label for="name" class="required">Full Name</label>
+                    <input type="text" id="name" name="name" required 
+                           pattern="[A-Za-z\s]{2,50}" 
+                           title="Please enter a valid name (2-50 characters, letters and spaces only)"
+                           aria-required="true"
+                           placeholder="Enter your full name">
+                    <div class="error-message">Please enter a valid name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Please enter a valid email address"
+                           aria-required="true"
+                           placeholder="Enter your email address">
+                    <div class="error-message">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="required">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required
+                           pattern="[0-9]{10}"
+                           title="Please enter a valid 10-digit phone number"
+                           aria-required="true"
+                           placeholder="Enter your phone number">
+                    <div class="error-message">Please enter a valid 10-digit phone number</div>
+                </div>
+            </fieldset>
+
+            <!-- Appointment Details -->
+            <fieldset>
+                <legend>Appointment Details</legend>
+
+                <div class="form-group">
+                    <label for="doctor" class="required">Select Doctor</label>
+                    <select id="doctor" name="doctor" required aria-required="true">
+                        <option value="">Choose a doctor</option>
+                        <option value="dr-john-smith">Dr. Raj Singh - General Physician</option>
+                        <option value="dr-alice-white">Dr. Raushan Dubey - Cardiologist</option>
+                        <option value="dr-michael-chen">Dr. Mangal Singh - Orthopedist</option>
+                        <option value="dr-sarah-johnson">Dr. Abhishek Singh - Pediatrician</option>
+                        <option value="dr-robert-wilson">Dr. Sudhanshu Singh - Neurologist</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentType" class="required">Appointment Type</label>
+                    <select id="appointmentType" name="appointmentType" required aria-required="true">
+                        <option value="">Select appointment type</option>
+                        <option value="general-checkup">General Checkup</option>
+                        <option value="follow-up">Follow-up Visit</option>
+                        <option value="specialist">Specialist Consultation</option>
+                        <option value="emergency">Emergency Visit</option>
+                        <option value="routine">Routine Examination</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date" class="required">Preferred Date</label>
+                    <input type="date" id="date" name="date" required
+                           min="2024-03-20"
+                           aria-required="true">
+                </div>
+
+                <div class="form-group">
+                    <label for="time" class="required">Preferred Time</label>
+                    <input type="time" id="time" name="time" required
+                           min="09:00" max="17:00"
+                           aria-required="true">
+                </div>
+            </fieldset>
+
+            <!-- Medical Information -->
+            <fieldset>
+                <legend>Medical Information</legend>
+
+                <div class="form-group">
+                    <label for="symptoms">Symptoms/Medical History</label>
+                    <textarea id="symptoms" name="symptoms" 
+                              placeholder="Please describe your symptoms or relevant medical history"
+                              aria-label="Symptoms and medical history"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Language</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="language" value="english" checked>
+                            English
+                        </label>
+                        <label>
+                            <input type="radio" name="language" value="Hindi">
+                            Hindi
+                        </label>
+                        <label>
+                            <input type="radio" name="language" value="Bhojpuri">
+                            Bhojpuri
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-check"></i> Book Appointment
+            </button>
+        </form>
+
+        <!-- Appointment Summary Table -->
+        <div class="appointment-summary" id="appointmentSummary">
+            <h3><i class="fas fa-file-medical"></i> Appointment Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Patient Name</td>
+                        <td id="summaryName"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td id="summaryEmail"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td id="summaryPhone"></td>
+                    </tr>
+                    <tr>
+                        <td>Doctor</td>
+                        <td id="summaryDoctor"></td>
+                    </tr>
+                    <tr>
+                        <td>Appointment Type</td>
+                        <td id="summaryType"></td>
+                    </tr>
+                    <tr>
+                        <td>Date & Time</td>
+                        <td id="summaryDateTime"></td>
+                    </tr>
+                    <tr>
+                        <td>Symptoms/History</td>
+                        <td id="summarySymptoms"></td>
+                    </tr>
+                    <tr>
+                        <td>Preferred Language</td>
+                        <td id="summaryLanguage"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const doctor = document.getElementById('doctor').value;
+            const appointmentType = document.getElementById('appointmentType').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const symptoms = document.getElementById('symptoms').value;
+            const language = document.querySelector('input[name="language"]:checked').value;
+
+            // Update summary table
+            document.getElementById('summaryName').textContent = name;
+            document.getElementById('summaryEmail').textContent = email;
+            document.getElementById('summaryPhone').textContent = phone;
+            document.getElementById('summaryDoctor').textContent = 
+                document.getElementById('doctor').options[document.getElementById('doctor').selectedIndex].text;
+            document.getElementById('summaryType').textContent = 
+                document.getElementById('appointmentType').options[document.getElementById('appointmentType').selectedIndex].text;
+            document.getElementById('summaryDateTime').textContent = `${date} at ${time}`;
+            document.getElementById('summarySymptoms').textContent = symptoms || 'None provided';
+            document.getElementById('summaryLanguage').textContent = 
+                language.charAt(0).toUpperCase() + language.slice(1);
+
+            // Show summary
+            document.getElementById('appointmentSummary').classList.add('visible');
+
+            // Scroll to summary
+            document.getElementById('appointmentSummary').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html> 
